@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420">
+  <rect width="620" height="420" rx="28" fill="#f1eee6"/>
+  <g fill="none" stroke="#4a6d61" stroke-width="2">
+    <rect x="120" y="86" width="76" height="214" rx="10"/>
+    <rect x="208" y="104" width="76" height="196" rx="10"/>
+    <rect x="296" y="78" width="76" height="222" rx="10"/>
+    <rect x="384" y="122" width="76" height="178" rx="10"/>
+    <path d="M100 316h392"/>
+    <path d="M144 124h24M232 142h24M320 116h24M408 160h24"/>
+  </g>
+  <g fill="#183128" font-family="Arial, sans-serif" font-size="18" font-weight="700">
+    <text x="120" y="58">Biblioteca</text>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 320">
+  <rect width="620" height="320" rx="22" fill="#f3f0e8"/>
+  <g fill="none" stroke="#4a6d61" stroke-width="2">
+    <rect x="58" y="74" width="112" height="70" rx="12"/>
+    <rect x="238" y="74" width="112" height="70" rx="12"/>
+    <rect x="418" y="74" width="112" height="70" rx="12"/>
+    <rect x="236" y="204" width="116" height="58" rx="12"/>
+    <path d="M170 109h68M350 109h68M294 144v60"/>
+  </g>
+  <g fill="#183128" font-family="Arial, sans-serif">
+    <text x="93" y="116" font-size="20" font-weight="700">SSD</text>
+    <text x="273" y="116" font-size="20" font-weight="700">RAM</text>
+    <text x="458" y="116" font-size="20" font-weight="700">CPU</text>
+    <text x="253" y="238" font-size="18" font-weight="700">Resultado</text>
+  </g>
+</svg>

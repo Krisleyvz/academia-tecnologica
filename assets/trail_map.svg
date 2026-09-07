@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#2f6b57" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#668f80" stop-opacity=".05"/>
+    </linearGradient>
+  </defs>
+  <rect width="620" height="420" rx="28" fill="url(#g2)"/>
+  <path d="M86 324 C146 258 188 240 238 223 S346 188 401 141 S492 93 540 88" fill="none" stroke="#486d5f" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#fffdf8" stroke="#486d5f" stroke-width="2">
+    <circle cx="88" cy="322" r="16"/><circle cx="202" cy="237" r="16"/><circle cx="304" cy="198" r="16"/><circle cx="420" cy="130" r="16"/><circle cx="542" cy="88" r="16"/>
+  </g>
+  <g fill="#183128" font-family="Arial, sans-serif" font-weight="700" font-size="16">
+    <text x="68" y="362">Fundamentos</text>
+    <text x="171" y="275">Lógica</text>
+    <text x="268" y="237">Dados</text>
+    <text x="382" y="169">Sistemas</text>
+    <text x="503" y="127">Construção</text>
+  </g>
+</svg>

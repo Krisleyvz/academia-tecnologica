@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#2f6b57" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#c6a75b" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+  <rect width="620" height="420" rx="28" fill="url(#g1)"/>
+  <g fill="none" stroke="#45695c" stroke-width="2">
+    <rect x="58" y="78" width="156" height="102" rx="14"/>
+    <rect x="242" y="78" width="134" height="102" rx="14"/>
+    <rect x="404" y="78" width="158" height="102" rx="14"/>
+    <rect x="176" y="238" width="258" height="96" rx="16"/>
+    <path d="M214 129h28M378 129h26M175 285h-42c-28 0-42-9-42-31v-38c0-21 14-31 42-31h271M433 286h50c30 0 45-9 45-31v-37c0-22-15-33-45-33h-45"/>
+  </g>
+  <g fill="#183128">
+    <text x="102" y="136" font-size="22" font-family="Arial, sans-serif" font-weight="700">SSD</text>
+    <text x="270" y="136" font-size="22" font-family="Arial, sans-serif" font-weight="700">RAM</text>
+    <text x="455" y="136" font-size="22" font-family="Arial, sans-serif" font-weight="700">CPU</text>
+    <text x="246" y="293" font-size="24" font-family="Arial, sans-serif" font-weight="700">Tela / Resultado</text>
+  </g>
+  <g fill="#58786a">
+    <text x="88" y="160" font-size="13" font-family="Arial, sans-serif">guarda programas e arquivos</text>
+    <text x="266" y="160" font-size="13" font-family="Arial, sans-serif">mantém dados prontos para uso</text>
+    <text x="443" y="160" font-size="13" font-family="Arial, sans-serif">executa instruções</text>
+  </g>
+</svg>

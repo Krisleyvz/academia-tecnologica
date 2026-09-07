@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420">
+  <rect width="620" height="420" rx="28" fill="#f1eee6"/>
+  <g fill="none" stroke="#4a6d61" stroke-width="2">
+    <rect x="98" y="70" width="300" height="250" rx="18"/>
+    <rect x="420" y="110" width="96" height="160" rx="12"/>
+    <path d="M132 120h230M132 155h190M132 190h210M132 240h144"/>
+    <path d="M441 150h54M441 178h40M441 206h52"/>
+  </g>
+  <g fill="#183128">
+    <text x="132" y="108" font-size="20" font-family="Arial, sans-serif" font-weight="700">Aula</text>
+    <text x="440" y="95" font-size="16" font-family="Arial, sans-serif" font-weight="700">Quiz</text>
+  </g>
+  <circle cx="492" cy="297" r="30" fill="#2f6b57" fill-opacity=".12" stroke="#4a6d61"/>
+  <text x="476" y="303" font-size="24" font-family="Arial, sans-serif" fill="#183128" font-weight="700">?</text>
+</svg>

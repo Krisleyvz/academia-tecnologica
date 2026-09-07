@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420">
+  <rect width="620" height="420" rx="28" fill="#f1eee6"/>
+  <g fill="none" stroke="#4a6d61" stroke-width="2">
+    <rect x="74" y="68" width="470" height="280" rx="18"/>
+    <path d="M74 124h470M220 124v224M374 124v224"/>
+    <rect x="106" y="158" width="82" height="62" rx="8"/>
+    <rect x="252" y="158" width="90" height="110" rx="8"/>
+    <rect x="404" y="158" width="108" height="62" rx="8"/>
+    <path d="M110 302h402"/>
+  </g>
+  <g fill="#183128" font-family="Arial, sans-serif">
+    <text x="96" y="106" font-size="20" font-weight="700">Projeto</text>
+    <text x="103" y="244" font-size="14">dados</text>
+    <text x="271" y="289" font-size="14">lógica</text>
+    <text x="428" y="244" font-size="14">interface</text>
+  </g>
+</svg>

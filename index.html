@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia — V0.7 Light Editorial Fixed</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#f4f0e8" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">K</div>
+        <div>
+          <div class="brand-title">ACADEMIA</div>
+          <div class="brand-sub">formação tecnológica</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-view="overview">
+          <span>01</span><b>Visão geral</b>
+        </button>
+        <button class="nav-item" data-view="trail">
+          <span>02</span><b>Trilha</b>
+        </button>
+        <button class="nav-item" data-view="lessons">
+          <span>03</span><b>Aulas</b>
+        </button>
+        <button class="nav-item" data-view="projects">
+          <span>04</span><b>Projetos</b>
+        </button>
+        <button class="nav-item" data-view="progress">
+          <span>05</span><b>Progresso</b>
+        </button>
+        <button class="nav-item" data-view="library">
+          <span>06</span><b>Biblioteca</b>
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="label">Objetivo atual</div>
+        <div class="goal">Fundamentos de tecnologia</div>
+        <div class="progress-line"><i style="width:8%"></i></div>
+        <div class="muted">Módulo 0 · 1/12</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow" id="today-label">—</div>
+          <h1 id="page-title">Visão geral</h1>
+        </div>
+        <div class="status-cluster">
+          <div class="mini-stat">
+            <small>Sequência</small>
+            <strong>01 dia</strong>
+          </div>
+          <div class="profile">KV</div>
+        </div>
+      </header>
+
+      <section id="overview" class="view active">
+        <div class="hero-grid">
+          <article class="hero">
+            <div class="hero-visual"><img src="assets/overview_computer.svg" alt="Diagrama sutil de fundamentos de computação"></div>
+            <div class="hero-kicker">AGORA</div>
+            <h2>Módulo 0<br><span>Como a tecnologia realmente funciona</span></h2>
+            <p>Antes de aprender ferramentas, você vai entender os princípios que tornam as ferramentas possíveis.</p>
+            <div class="hero-actions">
+              <button class="primary" data-open-lesson>Continuar aula</button>
+              <button class="secondary" data-view-target="trail">Ver trilha</button>
+            </div>
+          </article>
+
+          <article class="signal-card">
+            <div class="label">Leitura do momento</div>
+            <div class="signal-row"><span>Lógica</span><b>Inicial</b></div>
+            <div class="signal-row"><span>Sistemas</span><b>Boa intuição</b></div>
+            <div class="signal-row"><span>Dados</span><b>Boa intuição</b></div>
+            <div class="signal-row"><span>Programação</span><b>Início</b></div>
+            <div class="signal-row"><span>Automação</span><b>Alto interesse</b></div>
+          </article>
+        </div>
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">PLANO DE HOJE</div>
+            <h3>Uma sessão curta, mas completa.</h3>
+          </div>
+          <span class="muted">~ 55 min</span>
+        </div>
+
+        <div class="session-grid">
+          <div class="session-item">
+            <span class="num">01</span>
+            <div><b>Entender</b><p>CPU, memória, armazenamento e sistema operacional.</p></div>
+            <span class="time">20m</span>
+          </div>
+          <div class="session-item">
+            <span class="num">02</span>
+            <div><b>Visualizar</b><p>O caminho de um programa do SSD até a tela.</p></div>
+            <span class="time">10m</span>
+          </div>
+          <div class="session-item">
+            <span class="num">03</span>
+            <div><b>Aplicar</b><p>Exercício de raciocínio sem código.</p></div>
+            <span class="time">15m</span>
+          </div>
+          <div class="session-item">
+            <span class="num">04</span>
+            <div><b>Consolidar</b><p>Teste rápido + explicação com suas palavras.</p></div>
+            <span class="time">10m</span>
+          </div>
+        </div>
+
+        <div class="section-head compact">
+          <div>
+            <div class="eyebrow">MAPA DE COMPETÊNCIAS</div>
+            <h3>Você não avança por assistir. Avança por dominar.</h3>
+          </div>
+        </div>
+
+        <div class="skill-map">
+          <div class="skill active-skill">
+            <span>Fundamentos</span>
+            <strong>08%</strong>
+          </div>
+          <div class="connector"></div>
+          <div class="skill">
+            <span>Lógica</span>
+            <strong>00%</strong>
+          </div>
+          <div class="connector"></div>
+          <div class="skill">
+            <span>Dados</span>
+            <strong>00%</strong>
+          </div>
+          <div class="connector"></div>
+          <div class="skill">
+            <span>Sistemas</span>
+            <strong>00%</strong>
+          </div>
+          <div class="connector"></div>
+          <div class="skill">
+            <span>Construção</span>
+            <strong>00%</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="trail" class="view">
+        <div class="page-intro visual-intro">
+          <div class="intro-visual"><img src="assets/trail_map.svg" alt="Mapa visual da trilha de aprendizado"></div>
+          <div class="eyebrow">TRILHA PRINCIPAL</div>
+          <h2>Do fundamento à autonomia técnica.</h2>
+          <p>O caminho foi desenhado para criar compreensão antes de especialização.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item current">
+            <span class="dot"></span>
+            <div>
+              <small>MÓDULO 0</small>
+              <h3>Fundamentos da tecnologia</h3>
+              <p>Computador, informação, programas, algoritmos, dados, internet e sistemas.</p>
+            </div>
+            <b>1/12</b>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div>
+              <small>MÓDULO 1</small>
+              <h3>Lógica e programação</h3>
+              <p>Variáveis, decisões, repetições, funções e estrutura mental de programação.</p>
+            </div>
+            <b>0/14</b>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div>
+              <small>MÓDULO 2</small>
+              <h3>Dados e bancos</h3>
+              <p>Modelagem, SQL, qualidade de dados, relacionamentos e consultas.</p>
+            </div>
+            <b>0/16</b>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div>
+              <small>MÓDULO 3</small>
+              <h3>Sistemas e web</h3>
+              <p>Cliente, servidor, APIs, requisitos, front-end, back-end e arquitetura básica.</p>
+            </div>
+            <b>0/15</b>
+          </div>
+          <div class="timeline-item">
+            <span class="dot"></span>
+            <div>
+              <small>MÓDULO 4</small>
+              <h3>Exploração profissional</h3>
+              <p>Dados, BI, sistemas, software, automação, cloud, IA e segurança.</p>
+            </div>
+            <b>0/18</b>
+          </div>
+        </div>
+      </section>
+
+      <section id="lessons" class="view">
+        <div class="page-intro visual-intro">
+          <div class="intro-visual"><img src="assets/lessons_study.svg" alt="Ilustração discreta para aulas"></div>
+          <div class="eyebrow">MÓDULO 0</div>
+          <h2>Aulas</h2>
+          <p>Cada aula combina contexto, princípio, visualização, aplicação e teste.</p>
+        </div>
+        <div class="lesson-list">
+          <button class="lesson-row current" data-open-lesson>
+            <span>01</span>
+            <div>
+              <small>EM ANDAMENTO</small>
+              <b>O que realmente acontece dentro de um computador?</b>
+            </div>
+            <span>→</span>
+          </button>
+          <div class="lesson-row locked"><span>02</span><div><small>BLOQUEADA</small><b>Bits, bytes e como informação vira número</b></div><span>—</span></div>
+          <div class="lesson-row locked"><span>03</span><div><small>BLOQUEADA</small><b>O que é um programa?</b></div><span>—</span></div>
+          <div class="lesson-row locked"><span>04</span><div><small>BLOQUEADA</small><b>Algoritmos antes dos computadores</b></div><span>—</span></div>
+          <div class="lesson-row locked"><span>05</span><div><small>BLOQUEADA</small><b>Como os dados são organizados</b></div><span>—</span></div>
+        </div>
+      </section>
+
+      <section id="projects" class="view">
+        <div class="page-intro visual-intro">
+          <div class="intro-visual"><img src="assets/projects_build.svg" alt="Ilustração discreta para projetos"></div>
+          <div class="eyebrow">LABORATÓRIO</div>
+          <h2>Projetos</h2>
+          <p>A teoria sempre termina em algo que funciona.</p>
+        </div>
+        <div class="project-card">
+          <div>
+            <small>PROJETO 00 · EM BREVE</small>
+            <h3>Sistema de apoiadores — laboratório</h3>
+            <p>Cadastro, validação, banco, filtros, dashboard, automações e publicação — construído aos poucos conforme você aprende cada fundamento.</p>
+          </div>
+          <div class="project-meta">
+            <span>0%</span>
+            <div class="vertical-line"><i></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="progress" class="view">
+        <div class="page-intro visual-intro">
+          <div class="intro-visual"><img src="assets/progress_metrics.svg" alt="Ilustração discreta para progresso"></div>
+          <div class="eyebrow">PROGRESSO</div>
+          <h2>Domínio, não presença.</h2>
+          <p>Seu avanço é baseado em evidência de compreensão e aplicação.</p>
+        </div>
+        <div class="metrics-grid">
+          <div class="metric"><small>HORAS</small><strong>0.0</strong><span>de estudo registrado</span></div>
+          <div class="metric"><small>AULAS</small><strong>0</strong><span>dominadas</span></div>
+          <div class="metric"><small>PROJETOS</small><strong>0</strong><span>concluídos</span></div>
+          <div class="metric"><small>NÍVEL</small><strong>T0</strong><span>Digital Foundation</span></div>
+        </div>
+        <div class="mastery">
+          <div class="mastery-row"><span>Fundamentos</span><div><i style="width:8%"></i></div><b>08%</b></div>
+          <div class="mastery-row"><span>Lógica</span><div><i style="width:0%"></i></div><b>00%</b></div>
+          <div class="mastery-row"><span>Dados</span><div><i style="width:0%"></i></div><b>00%</b></div>
+          <div class="mastery-row"><span>Sistemas</span><div><i style="width:0%"></i></div><b>00%</b></div>
+          <div class="mastery-row"><span>Programação</span><div><i style="width:0%"></i></div><b>00%</b></div>
+        </div>
+      </section>
+
+      <section id="library" class="view">
+        <div class="page-intro visual-intro">
+          <div class="intro-visual"><img src="assets/library_reference.svg" alt="Ilustração discreta para biblioteca"></div>
+          <div class="eyebrow">BIBLIOTECA</div>
+          <h2>Conhecimento de referência.</h2>
+          <p>Conceitos, glossário, mapas mentais e materiais úteis ficam aqui — sem virar depósito de links.</p>
+        </div>
+        <div class="library-grid">
+          <div class="library-item"><small>GLOSSÁRIO</small><b>CPU, RAM, SSD, sistema operacional</b><span>4 conceitos</span></div>
+          <div class="library-item"><small>MAPA MENTAL</small><b>Como um computador executa um programa</b><span>em construção</span></div>
+          <div class="library-item"><small>NOTAS</small><b>Suas próprias explicações</b><span>0 registros</span></div>
+        </div>
+      </section>
+
+      <section id="lesson" class="view lesson-view">
+        <button class="back" data-back>← Voltar</button>
+        <div class="lesson-header visual-intro lesson-header-visual">
+          <div class="intro-visual"><img src="assets/lesson_detail.svg" alt="Fluxo visual da aula"></div>
+          <div class="eyebrow">MÓDULO 0 · AULA 01</div>
+          <h2>O que realmente acontece dentro de um computador?</h2>
+          <p>Da necessidade humana de calcular ao caminho que um programa percorre entre armazenamento, memória e processador.</p>
+        </div>
+        <div class="lesson-layout">
+          <article class="lesson-content">
+            <div class="lesson-section">
+              <small>01 · A PERGUNTA</small>
+              <h3>Por que um computador precisa de tantas partes?</h3>
+              <p>Porque armazenar informação e executar instruções são problemas diferentes. Um computador moderno separa essas responsabilidades para ganhar velocidade, flexibilidade e controle.</p>
+            </div>
+            <div class="lesson-section visual-explainer">
+              <small>02 · MODELO MENTAL</small>
+              <div class="flow">
+                <div><span>SSD</span><small>guarda</small></div>
+                <b>→</b>
+                <div><span>RAM</span><small>mantém disponível</small></div>
+                <b>→</b>
+                <div><span>CPU</span><small>executa</small></div>
+                <b>→</b>
+                <div><span>TELA</span><small>mostra resultado</small></div>
+              </div>
+            </div>
+            <div class="lesson-section">
+              <small>03 · SUA MISSÃO</small>
+              <h3>Explique com suas palavras.</h3>
+              <p>Se o SSD já guarda os programas, por que o computador não executa tudo diretamente dele?</p>
+              <textarea placeholder="Escreva seu raciocínio aqui..."></textarea>
+              <button class="primary small">Salvar resposta</button>
+            </div>
+          </article>
+          <aside class="lesson-side">
+            <div class="side-box">
+              <small>FORMATO</small>
+              <div class="side-row"><span>Leitura</span><b>12 min</b></div>
+              <div class="side-row"><span>Vídeo</span><b>em breve</b></div>
+              <div class="side-row"><span>Exercício</span><b>1</b></div>
+              <div class="side-row"><span>Teste</span><b>5 itens</b></div>
+            </div>
+            <div class="side-box emphasis">
+              <small>REGRA DA AULA</small>
+              <p>Você só conclui quando consegue explicar o princípio sem repetir uma definição decorada.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

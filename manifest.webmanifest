@@ -1,0 +1,9 @@
+{
+  "name": "Academia Tecnológica",
+  "short_name": "Academia",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e8",
+  "theme_color": "#f4f0e8",
+  "description": "Plataforma individual de formação tecnológica."
+}
