@@ -41,6 +41,17 @@ document.querySelector('[data-back]')?.addEventListener('click', () => showView(
   el.textContent = `${weekday.toUpperCase()} · ${day} ${month.toUpperCase()} ${year}`;
 })();
 
+
+if(!window.COURSE || !window.COURSE.module || !Array.isArray(window.COURSE.module.lessons)){
+  console.error('Academia: course.js não carregou.');
+  const list = document.getElementById('lesson-list');
+  if(list){
+    const notice = document.createElement('div');
+    notice.className = 'load-warning';
+    notice.innerHTML = '<strong>O conteúdo não carregou por completo.</strong><span>Atualize a página para buscar a versão mais recente.</span>';
+    list.prepend(notice);
+  }
+} else {
 function getLesson(id){
   return window.COURSE.module.lessons.find(l => l.id === id);
 }
@@ -285,7 +296,8 @@ document.querySelectorAll('[data-open-lesson]').forEach(btn => {
 renderLessonList();
 updateDashboard();
 
-// PWA
-if('serviceWorker' in navigator){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 }
+
+document.getElementById('fallback-a1')?.addEventListener('click', () => {
+  if(window.COURSE) openLesson('m0-a1');
+});

@@ -375,3 +375,17 @@ textarea:focus{border-color:#81978c}
 @media(max-width:700px){
   .video-placeholder{align-items:flex-start;flex-direction:column}
 }
+
+.load-warning{
+  border:1px solid #d5b88c;
+  background:#fff7e8;
+  border-radius:12px;
+  padding:14px 16px;
+  margin:16px 0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  font-size:12px;
+}
+.load-warning strong{font-size:13px;color:#6a4a1e}
+.load-warning span{color:#806847}

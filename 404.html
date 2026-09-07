@@ -4,10 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Academia — V0.7 Light Editorial Fixed</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css?v=021" />
+  <link rel="manifest" href="manifest.webmanifest?v=021" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#f4f0e8" />
+
+<script>
+(function(){
+  const HOTFIX = '021';
+  const k = 'academia:hotfix';
+  if(localStorage.getItem(k) !== HOTFIX){
+    localStorage.setItem(k, HOTFIX);
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.getRegistrations().then(regs => {
+        Promise.all(regs.map(r => r.unregister())).then(() => {
+          if('caches' in window){
+            caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k))));
+          }
+        });
+      });
+    }
+  }
+})();
+</script>
+
 </head>
 <body>
   <div class="app">
@@ -216,7 +236,26 @@
           <h2>Aulas</h2>
           <p>Cada aula combina contexto, princípio, visualização, aplicação e teste.</p>
         </div>
-        <div class="lesson-list" id="lesson-list"></div>
+        
+<div class="lesson-list" id="lesson-list">
+  <button class="lesson-row current" id="fallback-a1">
+    <span>01</span>
+    <div><small>EM ANDAMENTO</small><b>O que realmente acontece dentro de um computador?</b></div>
+    <span>→</span>
+  </button>
+  <div class="lesson-row locked"><span>02</span><div><small>EM CONSTRUÇÃO</small><b>Bits, bytes e como informação vira número</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>03</span><div><small>EM CONSTRUÇÃO</small><b>O que é um programa?</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>04</span><div><small>EM CONSTRUÇÃO</small><b>Algoritmos antes dos computadores</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>05</span><div><small>EM CONSTRUÇÃO</small><b>Variáveis: como um programa guarda valores</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>06</span><div><small>EM CONSTRUÇÃO</small><b>Decisões: como programas escolhem caminhos</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>07</span><div><small>EM CONSTRUÇÃO</small><b>Repetição: por que computadores são bons no trabalho braçal</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>08</span><div><small>EM CONSTRUÇÃO</small><b>Como os dados são organizados</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>09</span><div><small>EM CONSTRUÇÃO</small><b>Planilha x banco de dados</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>10</span><div><small>EM CONSTRUÇÃO</small><b>Cliente, servidor e internet</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>11</span><div><small>EM CONSTRUÇÃO</small><b>Front-end, back-end e APIs</b></div><span>—</span></div>
+  <div class="lesson-row locked"><span>12</span><div><small>EM CONSTRUÇÃO</small><b>Como nasce um sistema</b></div><span>—</span></div>
+</div>
+
       </section>
 
       <section id="projects" class="view">
@@ -350,7 +389,7 @@
       </section>
     </main>
   </div>
-  <script src="course.js"></script>
-  <script src="app.js"></script>
+  <script src="course.js?v=021"></script>
+  <script src="app.js?v=021"></script>
 </body>
 </html>
