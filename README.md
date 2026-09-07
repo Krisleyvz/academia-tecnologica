@@ -1,40 +1,29 @@
-# Academia Tecnológica — V0.1
+# Academia Tecnológica — V0.2
 
-Plataforma individual de formação tecnológica.
+Versão funcional da plataforma individual de formação tecnológica.
 
-## Estado atual
+## O que entrou nesta versão
 
-Versão inicial pronta para implantação:
-- interface responsiva;
-- visão geral;
-- trilha;
-- aulas;
-- projetos;
-- progresso;
-- biblioteca;
-- primeira aula;
-- persistência local da primeira resposta;
-- data dinâmica;
-- PWA/offline básico;
-- sem backend e sem custo de API.
+- Módulo 0 estruturado com 12 aulas;
+- Aula 1 completa;
+- conteúdo pedagógico com fundamentos e contexto histórico;
+- exercício escrito salvo no navegador;
+- teste interativo com 5 questões;
+- correção e feedback por questão;
+- melhor nota persistida;
+- critério de domínio: explicação escrita + pelo menos 80%;
+- progresso de Fundamentos recalculado automaticamente;
+- interface preparada para receber o vídeo da Aula 1;
+- PWA/offline atualizado.
 
-## Publicação recomendada
+## Critério pedagógico
 
-### Cloudflare Pages
-- Framework preset: None
-- Build command: deixar vazio
-- Build output directory: `/`
-- Branch de produção: `main`
+A plataforma não considera uma aula concluída apenas porque foi aberta.
+Aula dominada = demonstração de compreensão + avaliação mínima.
 
-O projeto é 100% estático nesta etapa.
+## Próxima etapa
 
-## Próxima fase
-
-Depois da publicação:
-1. transformar o conteúdo em dados estruturados;
-2. implementar progresso real por aula;
-3. avaliações;
-4. revisão espaçada;
-5. projetos;
-6. currículo completo;
-7. integração operacional com o tutor ChatGPT sem API paga.
+1. validar a Aula 1;
+2. gerar o vídeo explicativo da Aula 1;
+3. criar a Aula 2;
+4. implementar revisão espaçada e registro de tempo real de estudo.

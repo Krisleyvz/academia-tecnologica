@@ -1,6 +1,6 @@
-const CACHE='academia-v01';
+const CACHE='academia-v02';
 const ASSETS=[
-  './','./index.html','./styles.css','./app.js','./manifest.webmanifest',
+  './','./index.html','./styles.css','./app.js','./course.js','./manifest.webmanifest',
   './assets/icon.svg',
   './assets/overview_computer.svg','./assets/trail_map.svg',
   './assets/lessons_study.svg','./assets/projects_build.svg',

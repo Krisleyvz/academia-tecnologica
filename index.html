@@ -216,20 +216,7 @@
           <h2>Aulas</h2>
           <p>Cada aula combina contexto, princípio, visualização, aplicação e teste.</p>
         </div>
-        <div class="lesson-list">
-          <button class="lesson-row current" data-open-lesson>
-            <span>01</span>
-            <div>
-              <small>EM ANDAMENTO</small>
-              <b>O que realmente acontece dentro de um computador?</b>
-            </div>
-            <span>→</span>
-          </button>
-          <div class="lesson-row locked"><span>02</span><div><small>BLOQUEADA</small><b>Bits, bytes e como informação vira número</b></div><span>—</span></div>
-          <div class="lesson-row locked"><span>03</span><div><small>BLOQUEADA</small><b>O que é um programa?</b></div><span>—</span></div>
-          <div class="lesson-row locked"><span>04</span><div><small>BLOQUEADA</small><b>Algoritmos antes dos computadores</b></div><span>—</span></div>
-          <div class="lesson-row locked"><span>05</span><div><small>BLOQUEADA</small><b>Como os dados são organizados</b></div><span>—</span></div>
-        </div>
+        <div class="lesson-list" id="lesson-list"></div>
       </section>
 
       <section id="projects" class="view">
@@ -290,44 +277,61 @@
 
       <section id="lesson" class="view lesson-view">
         <button class="back" data-back>← Voltar</button>
+
         <div class="lesson-header visual-intro lesson-header-visual">
-          <div class="intro-visual"><img src="assets/lesson_detail.svg" alt="Fluxo visual da aula"></div>
-          <div class="eyebrow">MÓDULO 0 · AULA 01</div>
-          <h2>O que realmente acontece dentro de um computador?</h2>
-          <p>Da necessidade humana de calcular ao caminho que um programa percorre entre armazenamento, memória e processador.</p>
+          <div>
+            <div class="eyebrow" id="lesson-eyebrow">MÓDULO 0 · AULA 01</div>
+            <h2 id="lesson-title">O que realmente acontece dentro de um computador?</h2>
+            <p id="lesson-summary">Fundamentos antes das ferramentas.</p>
+          </div>
+          <div class="intro-visual">
+            <img src="assets/lesson_detail.svg" alt="Fluxo visual da aula">
+          </div>
         </div>
+
         <div class="lesson-layout">
           <article class="lesson-content">
-            <div class="lesson-section">
-              <small>01 · A PERGUNTA</small>
-              <h3>Por que um computador precisa de tantas partes?</h3>
-              <p>Porque armazenar informação e executar instruções são problemas diferentes. Um computador moderno separa essas responsabilidades para ganhar velocidade, flexibilidade e controle.</p>
-            </div>
-            <div class="lesson-section visual-explainer">
-              <small>02 · MODELO MENTAL</small>
-              <div class="flow">
-                <div><span>SSD</span><small>guarda</small></div>
-                <b>→</b>
-                <div><span>RAM</span><small>mantém disponível</small></div>
-                <b>→</b>
-                <div><span>CPU</span><small>executa</small></div>
-                <b>→</b>
-                <div><span>TELA</span><small>mostra resultado</small></div>
+            <div class="video-placeholder">
+              <div>
+                <small>VÍDEO DA AULA</small>
+                <strong>Vídeo explicativo será adicionado após validarmos o conteúdo.</strong>
+                <span>O texto abaixo é a fonte pedagógica do vídeo.</span>
               </div>
+              <button class="secondary" disabled>Em produção</button>
             </div>
+
+            <div id="lesson-sections"></div>
+
             <div class="lesson-section">
-              <small>03 · SUA MISSÃO</small>
+              <small>EXERCÍCIO DE COMPREENSÃO</small>
               <h3>Explique com suas palavras.</h3>
-              <p>Se o SSD já guarda os programas, por que o computador não executa tudo diretamente dele?</p>
-              <textarea placeholder="Escreva seu raciocínio aqui..."></textarea>
-              <button class="primary small">Salvar resposta</button>
+              <p id="written-prompt"></p>
+              <textarea id="written-answer" placeholder="Escreva seu raciocínio aqui..."></textarea>
+              <button class="primary small" id="save-written">Salvar resposta</button>
+              <div class="answer-status" id="answer-status"></div>
+            </div>
+
+            <div class="lesson-section quiz-section">
+              <small>TESTE DE DOMÍNIO</small>
+              <h3>Não é presença. É compreensão.</h3>
+              <p>Você precisa obter pelo menos 80% e registrar a explicação acima para dominar esta aula.</p>
+              <div id="quiz-container"></div>
+              <button class="primary" id="submit-quiz">Corrigir teste</button>
+              <div id="quiz-result" class="quiz-result"></div>
+            </div>
+
+            <div class="lesson-section mastery-box" id="mastery-box">
+              <small>DOMÍNIO</small>
+              <h3>Aula ainda não dominada.</h3>
+              <p>Complete a explicação escrita e alcance a nota mínima no teste.</p>
             </div>
           </article>
+
           <aside class="lesson-side">
             <div class="side-box">
               <small>FORMATO</small>
-              <div class="side-row"><span>Leitura</span><b>12 min</b></div>
-              <div class="side-row"><span>Vídeo</span><b>em breve</b></div>
+              <div class="side-row"><span>Leitura</span><b>~ 25 min</b></div>
+              <div class="side-row"><span>Vídeo</span><b>em produção</b></div>
               <div class="side-row"><span>Exercício</span><b>1</b></div>
               <div class="side-row"><span>Teste</span><b>5 itens</b></div>
             </div>
@@ -335,11 +339,18 @@
               <small>REGRA DA AULA</small>
               <p>Você só conclui quando consegue explicar o princípio sem repetir uma definição decorada.</p>
             </div>
+            <div class="side-box">
+              <small>SEU RESULTADO</small>
+              <div class="side-row"><span>Explicação</span><b id="side-written">pendente</b></div>
+              <div class="side-row"><span>Melhor nota</span><b id="side-score">—</b></div>
+              <div class="side-row"><span>Status</span><b id="side-mastery">em estudo</b></div>
+            </div>
           </aside>
         </div>
       </section>
     </main>
   </div>
+  <script src="course.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
