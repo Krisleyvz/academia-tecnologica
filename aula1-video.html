@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aula 1 — Como um computador funciona</title>
+<style>
+:root{--bg:#f4f0e8;--panel:#fffdf8;--line:#ddd7ca;--text:#1d241f;--muted:#68716b;--accent:#2f6b57;--gold:#b18e3d;--dark:#22372d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.player{min-height:100vh;display:grid;grid-template-rows:1fr auto;background:linear-gradient(120deg,rgba(47,107,87,.055),transparent 42%),linear-gradient(315deg,rgba(177,142,61,.05),transparent 35%),var(--bg)}
+.stage{position:relative;min-height:520px;display:grid;place-items:center;padding:42px 56px 120px;overflow:hidden}
+.slide{display:none;width:min(1100px,100%);animation:fade .28s ease}.slide.active{display:block}@keyframes fade{from{opacity:.2;transform:translateY(5px)}to{opacity:1;transform:none}}
+.kicker{font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}.title{font-size:clamp(34px,5vw,64px);line-height:1.02;letter-spacing:-.045em;margin:0 0 18px}.lead{font-size:clamp(16px,2vw,22px);line-height:1.6;color:#57645d;max-width:900px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.card{border:1px solid var(--line);background:rgba(255,253,248,.9);border-radius:18px;padding:24px;min-height:170px}.card b{display:block;font-size:25px;margin-bottom:10px}.card span{font-size:14px;line-height:1.55;color:var(--muted)}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;align-items:center;gap:14px;margin-top:34px}.node{border:1px solid var(--line);background:var(--panel);border-radius:18px;padding:28px 18px;text-align:center;min-height:145px;display:flex;flex-direction:column;justify-content:center}.node strong{font-size:28px}.node small{color:var(--muted);font-size:13px;margin-top:8px}.arrow{font-size:32px;color:#8c958f}.os{margin:22px auto 0;max-width:900px;border:1px dashed #9fb4a8;border-radius:16px;padding:16px;text-align:center;color:#426152;background:rgba(47,107,87,.045)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}.era{padding:22px;border-top:3px solid #c8c0b2;background:rgba(255,253,248,.72);border-radius:0 0 14px 14px}.era b{display:block;font-size:19px;margin-bottom:8px}.era span{color:var(--muted);font-size:14px;line-height:1.5}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.bigcard{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:32px}.bigcard h3{font-size:31px;margin:0 0 12px}.bigcard p{font-size:16px;line-height:1.6;color:var(--muted);margin:0}.pill{display:inline-block;margin-top:18px;padding:8px 10px;border-radius:999px;background:#eef3ef;color:#355446;font-size:12px;font-weight:700}.pill.gold{background:#f4eedf;color:#755f27}
+.cpuBox{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:30px}.cpuStep{padding:28px;border:1px solid var(--line);background:var(--panel);border-radius:18px;text-align:center}.cpuStep span{display:block;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}.cpuStep b{display:block;font-size:26px;margin-top:10px}
+.osgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:30px}.ositem{padding:20px 14px;border:1px solid var(--line);border-radius:16px;background:var(--panel);text-align:center}.ositem b{font-size:15px}.ositem span{display:block;color:var(--muted);font-size:12px;margin-top:7px}
+.fixlist{display:grid;gap:12px;margin-top:26px}.fix{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;border-bottom:1px solid var(--line);padding:16px 0}.fix strong{font-size:14px;color:#7b817d}.fix b{font-size:20px}.challenge{max-width:900px;padding:34px;border:1px solid #aebfb5;background:linear-gradient(180deg,rgba(47,107,87,.06),transparent 70%),var(--panel);border-radius:22px;margin-top:26px}.challenge p{font-size:22px;line-height:1.55;margin:0;color:#35443c}
+.caption{position:absolute;left:50%;transform:translateX(-50%);bottom:26px;width:min(1050px,calc(100% - 60px));background:rgba(29,36,31,.94);color:#fbfaf6;border-radius:14px;padding:16px 20px;font-size:15px;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.controls{border-top:1px solid var(--line);background:rgba(255,253,248,.96);padding:12px 18px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}.btns{display:flex;gap:8px}.btn{border:1px solid #d2cabd;background:#f6f1e7;color:var(--text);border-radius:10px;padding:10px 13px;cursor:pointer;font-weight:700}.btn.primary{background:var(--dark);color:#fff;border-color:var(--dark)}.bar{height:5px;background:#ded7ca;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;background:var(--accent);width:0}.counter{font-size:12px;color:var(--muted);min-width:55px;text-align:right}.start{position:absolute;inset:0;display:grid;place-items:center;background:rgba(244,240,232,.96);z-index:5}.start.hidden{display:none}.startbox{width:min(620px,calc(100% - 40px));text-align:center;border:1px solid var(--line);background:var(--panel);border-radius:24px;padding:42px;box-shadow:0 22px 60px rgba(40,46,42,.08)}.startbox h1{font-size:38px;letter-spacing:-.04em;margin:8px 0 14px}.startbox p{color:var(--muted);line-height:1.6}.startbox button{margin-top:14px;background:var(--dark);color:white;border:0;border-radius:11px;padding:13px 18px;font-weight:800;cursor:pointer}
+@media(max-width:800px){.stage{padding:28px 20px 132px;min-height:610px}.grid4,.timeline,.compare,.cpuBox,.osgrid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);text-align:center}.caption{bottom:18px;width:calc(100% - 28px);font-size:13px}.controls{grid-template-columns:1fr auto}.bar{grid-column:1/-1;grid-row:1}.btns{grid-row:2}.counter{grid-row:2}.fix{grid-template-columns:1fr;gap:5px}.title{font-size:38px}.lead{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="player">
+  <main class="stage">
+    <div class="start" id="start"><div class="startbox"><div class="kicker">MÓDULO 0 · AULA 01</div><h1>O que realmente acontece dentro de um computador?</h1><p>Vídeo visual com narração revisada. Os termos técnicos e as legendas desta versão são controlados pela própria Academia.</p><button id="startBtn">Começar aula</button></div></div>
+
+    <section class="slide active"><div class="kicker">AULA 01 · FUNDAMENTOS</div><h2 class="title">Como um computador realmente funciona</h2><p class="lead">Informação entra. Instruções são executadas. Resultados aparecem. Primeiro vamos separar as responsabilidades de cada componente.</p></section>
+
+    <section class="slide"><div class="kicker">01 · O PROBLEMA ORIGINAL</div><h2 class="title">Antes do computador, o gargalo era executar operações em escala.</h2><div class="timeline"><div class="era"><b>Trabalho humano</b><span>Cálculos e rotinas dependiam de pessoas.</span></div><div class="era"><b>Máquinas mecânicas</b><span>Parte da repetição começou a ser automatizada.</span></div><div class="era"><b>Computador eletrônico</b><span>Instruções passaram a ser executadas em enorme velocidade.</span></div></div></section>
+
+    <section class="slide"><div class="kicker">02 · QUEM FAZ O QUÊ</div><h2 class="title">Quatro papéis diferentes.</h2><div class="grid4"><div class="card"><b>SSD</b><span>Guarda programas e arquivos mesmo sem energia.</span></div><div class="card"><b>RAM</b><span>Mantém rapidamente disponível o que está sendo usado agora.</span></div><div class="card"><b>CPU</b><span>Executa instruções.</span></div><div class="card"><b>Sistema operacional</b><span>Coordena memória, processos, arquivos e dispositivos.</span></div></div></section>
+
+    <section class="slide"><div class="kicker">03 · SSD</div><h2 class="title">Guardar não é executar.</h2><div class="compare"><div class="bigcard"><h3>SSD</h3><p>Armazenamento persistente. Continua guardando dados quando a máquina é desligada.</p><span class="pill gold">ex.: 1 TB de espaço</span></div><div class="bigcard"><h3>Não confunda</h3><p>Ter muito espaço no SSD não significa ter muita RAM e não significa que o SSD executa programas.</p><span class="pill">função diferente</span></div></div></section>
+
+    <section class="slide"><div class="kicker">04 · MEMÓRIA RAM</div><h2 class="title">A RAM é a memória de trabalho.</h2><div class="compare"><div class="bigcard"><h3>Rápida</h3><p>A CPU acessa dados e instruções na RAM enquanto trabalha.</p><span class="pill">uso atual</span></div><div class="bigcard"><h3>Temporária</h3><p>Ao desligar o computador, o conteúdo daquela sessão desaparece.</p><span class="pill gold">volátil</span></div></div></section>
+
+    <section class="slide"><div class="kicker">05 · CPU</div><h2 class="title">A CPU executa instruções.</h2><div class="cpuBox"><div class="cpuStep"><span>1</span><b>Busca</b></div><div class="cpuStep"><span>2</span><b>Opera</b></div><div class="cpuStep"><span>3</span><b>Continua</b></div></div><p class="lead" style="margin-top:28px">Programas complexos são construídos a partir de enormes sequências de instruções simples.</p></section>
+
+    <section class="slide"><div class="kicker">06 · SISTEMA OPERACIONAL</div><h2 class="title">Quem coordena a máquina?</h2><div class="osgrid"><div class="ositem"><b>Memória</b><span>alocação</span></div><div class="ositem"><b>Processos</b><span>execução</span></div><div class="ositem"><b>Arquivos</b><span>acesso</span></div><div class="ositem"><b>Dispositivos</b><span>entrada e saída</span></div><div class="ositem"><b>Permissões</b><span>controle</span></div></div></section>
+
+    <section class="slide"><div class="kicker">07 · QUANDO VOCÊ CLICA</div><h2 class="title">Do programa armazenado ao resultado na tela.</h2><div class="flow"><div class="node"><strong>SSD</strong><small>arquivos do programa</small></div><div class="arrow">→</div><div class="node"><strong>RAM</strong><small>partes em uso</small></div><div class="arrow">→</div><div class="node"><strong>CPU</strong><small>instruções executadas</small></div><div class="arrow">→</div><div class="node"><strong>Tela</strong><small>resultado percebido</small></div></div><div class="os">Sistema operacional coordenando o fluxo, a memória, o processo e os dispositivos.</div></section>
+
+    <section class="slide"><div class="kicker">08 · CORRIGINDO INTUIÇÕES</div><h2 class="title">Três distinções que você precisa dominar.</h2><div class="fixlist"><div class="fix"><strong>CPU</strong><b>Executa instruções — não armazena “capacidade”.</b></div><div class="fix"><strong>RAM</strong><b>Memória de trabalho — não decide sozinha a simultaneidade.</b></div><div class="fix"><strong>SSD</strong><b>Armazenamento persistente — não é a mesma coisa que RAM.</b></div></div></section>
+
+    <section class="slide"><div class="kicker">09 · DOMÍNIO</div><h2 class="title">Você entendeu quando consegue explicar sem decorar.</h2><div class="challenge"><p>Por que um programa fica armazenado no SSD, é carregado para a RAM e tem suas instruções executadas pela CPU? Onde entra o sistema operacional?</p></div></section>
+
+    <div class="caption" id="caption"></div>
+  </main>
+  <footer class="controls"><div class="btns"><button class="btn" id="prev">←</button><button class="btn primary" id="play">Pausar</button><button class="btn" id="next">→</button></div><div class="bar"><i id="progress"></i></div><div class="counter" id="counter">1 / 10</div></footer>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const data=[
+{audio:'https://www.aidocmaker.com/g0/audio?name=03c7a09fd40e44fea05f894f272ab883',caption:'Um computador recebe informações, executa instruções sobre elas e produz resultados. Primeiro precisamos separar quem faz o quê dentro da máquina.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=e5391120935d48c69ec184fb7ced3d99',caption:'O computador moderno nasceu da necessidade de representar informação, armazenar instruções e executar essas instruções com velocidade e precisão.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=701024ba7448426e8424282aca164439',caption:'SSD guarda. RAM mantém disponível. CPU executa. Sistema operacional coordena.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=2a660beb874f4cd8b75caff8c9f9c9cf',caption:'O SSD é armazenamento persistente: guarda programas e arquivos mesmo sem energia.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=c01638c77a5a4a058bf33f3211cc98c0',caption:'A RAM é memória de trabalho rápida e temporária. Ela mantém disponível aquilo que está em uso agora.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=6d4aa66c347b409292b94cf889d3b137',caption:'A CPU executa instruções. Programas complexos são enormes sequências de operações simples.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=6c8e64cd3b22494aacb4164cef1a738f',caption:'O sistema operacional administra memória, processos, arquivos, dispositivos e permissões.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=886ec2f971e94a21aadac2759ffdbdeb',caption:'Fluxo simplificado: SSD → RAM → CPU → resultado na tela, com o sistema operacional coordenando todo o processo.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=1f46fefb97e84101a86f9d36cea2822f',caption:'CPU, RAM e SSD têm funções diferentes. Entender essa separação evita confusões que aparecem mais tarde em programação e sistemas.'},
+{audio:'https://www.aidocmaker.com/g0/audio?name=11376da0e03c4defbbc849e5ea9e7a9d',caption:'O objetivo é conseguir explicar o fluxo com suas próprias palavras, sem repetir uma definição decorada.'}
+];
+let i=0,playing=false;const audio=document.getElementById('audio'),caption=document.getElementById('caption'),progress=document.getElementById('progress'),counter=document.getElementById('counter'),play=document.getElementById('play');
+function show(n,autoplay=true){i=Math.max(0,Math.min(data.length-1,n));slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));caption.textContent=data[i].caption;counter.textContent=`${i+1} / ${data.length}`;audio.src=data[i].audio;audio.load();progress.style.width=`${(i/data.length)*100}%`;if(autoplay){audio.play().then(()=>{playing=true;play.textContent='Pausar'}).catch(()=>{playing=false;play.textContent='Reproduzir'})}}
+function toggle(){if(audio.paused){audio.play();playing=true;play.textContent='Pausar'}else{audio.pause();playing=false;play.textContent='Reproduzir'}}
+audio.addEventListener('ended',()=>{if(i<data.length-1)show(i+1,true);else{progress.style.width='100%';playing=false;play.textContent='Reproduzir novamente'}});
+audio.addEventListener('timeupdate',()=>{if(audio.duration){const seg=(i+audio.currentTime/audio.duration)/data.length;progress.style.width=`${Math.min(100,seg*100)}%`}});
+audio.addEventListener('error',()=>{caption.innerHTML=`${data[i].caption}<br><small style="opacity:.75">A narração não carregou. Tente novamente em alguns segundos.</small>`;playing=false;play.textContent='Tentar áudio'});
+document.getElementById('prev').onclick=()=>show(i-1,true);document.getElementById('next').onclick=()=>show(i+1,true);play.onclick=toggle;
+document.getElementById('startBtn').onclick=()=>{document.getElementById('start').classList.add('hidden');show(0,true)};
+caption.textContent=data[0].caption;
+</script>
+</body>
+</html>

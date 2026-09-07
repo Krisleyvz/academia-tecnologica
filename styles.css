@@ -389,3 +389,13 @@ textarea:focus{border-color:#81978c}
 }
 .load-warning strong{font-size:13px;color:#6a4a1e}
 .load-warning span{color:#806847}
+
+/* V0.2.2 — vídeo da Aula 1 */
+.lesson-video-block{padding:24px 0 30px;border-bottom:1px solid var(--line)}
+.lesson-video-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:14px}
+.lesson-video-head small{display:block;font-size:9px;letter-spacing:.14em;color:#7a847d;margin-bottom:5px}
+.lesson-video-head strong{font-size:16px}
+.lesson-video-head>span{font-size:11px;color:var(--muted)}
+.lesson-video-frame{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:16px;background:#f4f0e8;display:block;box-shadow:var(--shadow)}
+.lesson-video-note{font-size:12px!important;line-height:1.55!important;color:var(--muted)!important;margin:10px 2px 0!important;max-width:none!important}
+@media(max-width:700px){.lesson-video-block{padding-top:12px}.lesson-video-head{align-items:start}.lesson-video-frame{aspect-ratio:9/13;min-height:590px}}

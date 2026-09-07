@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Academia — V0.7 Light Editorial Fixed</title>
-  <link rel="stylesheet" href="styles.css?v=021" />
+  <link rel="stylesheet" href="styles.css?v=022" />
   <link rel="manifest" href="manifest.webmanifest?v=021" />
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#f4f0e8" />
@@ -330,13 +330,13 @@
 
         <div class="lesson-layout">
           <article class="lesson-content">
-            <div class="video-placeholder">
-              <div>
-                <small>VÍDEO DA AULA</small>
-                <strong>Vídeo explicativo será adicionado após validarmos o conteúdo.</strong>
-                <span>O texto abaixo é a fonte pedagógica do vídeo.</span>
+            <div class="lesson-video-block">
+              <div class="lesson-video-head">
+                <div><small>VÍDEO DA AULA · V0.2</small><strong>Narração revisada + visual controlado</strong></div>
+                <span>≈ 5 min</span>
               </div>
-              <button class="secondary" disabled>Em produção</button>
+              <iframe class="lesson-video-frame" src="aula1-video.html?v=022" title="Vídeo da Aula 1" loading="lazy" allow="autoplay"></iframe>
+              <p class="lesson-video-note">O texto abaixo continua sendo a fonte pedagógica principal. O vídeo serve para visualizar e consolidar o fluxo.</p>
             </div>
 
             <div id="lesson-sections"></div>
@@ -370,7 +370,7 @@
             <div class="side-box">
               <small>FORMATO</small>
               <div class="side-row"><span>Leitura</span><b>~ 25 min</b></div>
-              <div class="side-row"><span>Vídeo</span><b>em produção</b></div>
+              <div class="side-row"><span>Vídeo</span><b>≈ 5 min</b></div>
               <div class="side-row"><span>Exercício</span><b>1</b></div>
               <div class="side-row"><span>Teste</span><b>5 itens</b></div>
             </div>
@@ -389,7 +389,7 @@
       </section>
     </main>
   </div>
-  <script src="course.js?v=021"></script>
-  <script src="app.js?v=021"></script>
+  <script src="course.js?v=022"></script>
+  <script src="app.js?v=022"></script>
 </body>
 </html>
