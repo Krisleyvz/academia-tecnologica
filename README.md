@@ -38,3 +38,27 @@ Aula dominada = demonstração de compreensão + avaliação mínima.
 - aviso explícito caso course.js não carregue.
 
 Motivo: evitar versões diferentes entre desktop e celular durante o desenvolvimento ativo.
+
+---
+
+## Project overview / Visão do projeto (October 2026)
+
+Academia Tecnológica is a personal learning platform under development. It uses HTML, CSS and vanilla JavaScript; no account or paid service is needed to try the public demo.
+
+- **Live demo:** https://krisleyvz.github.io/academia-tecnologica/
+- **Current scope:** the roadmap lists 12 lessons on technology fundamentals. Lesson 1 is available; the other 11 are locked/planned, not completed content.
+- **Lesson 1:** explanatory content, a written reflection and a five-question quiz with feedback. Mastery requires a written answer of at least 30 characters and a best quiz score of at least 80%.
+- **Progress:** stored only in the browser's `localStorage`; it does not sync across devices and can be lost if browser data is cleared.
+- **Offline status:** offline access is not guaranteed; the current service worker unregisters itself and clears old caches.
+
+### Try it locally
+
+From the repository directory, run `python -m http.server 8000` and open `http://localhost:8000/` in your browser. No build step or backend is required for the current public lesson.
+
+### Version labels
+
+The V0.2/V0.2.1 sections above are historical notes preserved from earlier work. The current page title says V0.7, but this is an interface label, **not** a claim that all 12 lessons or offline mode are finished.
+
+### Next improvements
+
+Complete and validate the next lesson; add automated checks for quiz/progress behavior; test the interface on mobile and desktop; then capture a verified screenshot for this README.
